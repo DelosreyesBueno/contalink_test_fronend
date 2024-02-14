@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <h1 class="display-4 mb-4">Invoices</h1>
+
+    <form action="">
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="fechaInicio" class="form-label">Fecha de inicio</label>
+                <input type="date" name="fechaInicio" class="form-control" id="fechaInicio"
+                    [(ngModel)]="startDate">
+            </div>
+            <div class="col-md-3">
+                <label for="fechaFin" class="form-label">Fecha de fin</label>
+                <input type="date" name="fechaFin" class="form-control" id="fechaFin"
+                    [(ngModel)]="endDate">
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary mt-4" (click)="getInvoicesByDate()">Buscar</button>
+            </div>
+        </div>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Invoice Number</th>
+                <th scope="col">Total</th>
+                <th scope="col">Invoice Date</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let invoice of invoices | paginate: { itemsPerPage: 15, currentPage: page }">
+                <td>{{invoice.invoice_number}}</td>
+                <td>{{invoice.total}}</td>
+                <td>{{invoice.invoice_date}}</td>
+                <td>{{invoice.status}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>
