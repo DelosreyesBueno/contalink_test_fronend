@@ -12,7 +12,7 @@ Descripción breve del proyecto.
 1. Clonar el repositorio:
 
     ```bash
-    git clone https://github.com/tu_usuario/tu_proyecto.git
+    git clone git@github.com:DelosreyesBueno/contalink_test_fronend.git
     ```
 
 2. Instalar las dependencias del proyecto:
