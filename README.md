@@ -1,6 +1,6 @@
 # ContalinkTest
 
-Descripción breve del proyecto.
+Aplicacion creada en angular que obtiene la lista de invoices, la llista se puede filtrar entre un rango de fechas
 
 ## Requisitos
 
