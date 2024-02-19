@@ -13,7 +13,7 @@ export class InvoiceService {
   constructor(private http: HttpClient) { }
 
   getInvoiceByDate(startDate: string, endDate: string): Observable<IInvoice[]> {
-    const url = `${environment.apiUrl}/by_date_range`;
+    const url = `${environment.apiUrl}/invoices/by_date_range`;
     const params = new HttpParams()
       .set('start_date', startDate)
       .set('end_date', endDate)
